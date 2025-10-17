@@ -1,0 +1,239 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron tutorial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+DE+SAS:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Lado esquerdo */
+        #esquerda {
+            flex: 1;
+    background-color: #240046;
+    display: flex;
+    flex-direction: column; /* empilha título/logo e login verticalmente */
+    justify-content: center; /* centraliza verticalmente */
+    align-items: center;     /* centraliza horizontalmente */
+    position: relative;
+    gap: 50px; /* espaço entre títuloContainer e login */
+        }
+
+        /* Container do título, logo e frase */
+        #tituloContainer {
+            position: absolute;
+            top: 50px; /* ajuste vertical */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column; /* vertical: título/logo acima e frase abaixo */
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Título + logo em linha */
+        #titulologo {
+            display: flex;
+            flex-direction: row; /* título e logo lado a lado */
+            align-items: center;
+            gap: 10px;
+        }
+
+        #titulo {
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        #Logo {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Frase abaixo do título/logo */
+        #fraseAdm {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: #d8c7ff;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Login */
+        #login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+        }
+
+        #login h1 {
+            color: white;
+            font-size: 38px;
+            margin: 0;
+        }
+
+        #divLogin {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;   
+        }
+
+        #divLogin input {
+            width: 300px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 25px;
+            border: none;
+            background-color: #520694;
+            color: white;
+        }
+
+        #divLogin input:focus {
+            outline: none;
+            box-shadow: 0 0 5px #fff;
+        }
+
+        #divLogin button {
+            width: 100px;
+            padding: 12px 0;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            background-color: #7530B1;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #divLogin button:hover {
+            background-color: #9b4de0;
+        }
+
+        /* Lado direito */
+        #direita {
+            flex: 1;
+            background-color: #5a189a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #conteudo-direita {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #Frase {
+            font-size: 38px;
+            color:#d8c7ff;
+            font-weight: 500;
+            margin: 0;
+            max-width: 80%;
+        }
+
+        #imagenzinha {
+            width: 50%;
+            height: 50%;
+            margin-bottom: 20px;
+        }
+        #fraseLogin {
+            color:#d8c7ff;
+            font-size: 16px;
+            margin-top: 9;
+            font-family: 'Poppins', sans-serif;
+        }
+        #creditos {
+  position: absolute;
+  bottom: 1px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+        } 
+        
+        #fraseLogin {
+        transition: opacity 1s ease-in-out;
+        opacity : 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="esquerda">
+        <div id="tituloContainer">
+            <div id="titulologo">
+                <div id="titulo">Suggesto</div>
+                <img src="../public/img/balãoSuggesto.png" id="Logo"> 
+            </div>
+            <div id="fraseAdm">Administradores</div>
+        </div>
+
+        <div id="login">
+            <h1>Faça seu login</h1>
+            <p id="fraseLogin" class="fade"> Descubra o que seus clientes andam comentando </p>
+            <div id="divLogin">
+                <input type="email" id="email" placeholder="Digite seu email" autofocus>
+                <input type="password" id="senha" placeholder="Digite sua senha">
+                <button id="entrar">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="direita">
+        <div id="conteudo-direita">
+            <img src="../public/img/Feedback-bro.svg" id="imagenzinha">
+            <h1 id="Frase">Toda mudança começa com uma sugestão</h1>
+        </div>
+    </div>
+    <p id="creditos">© 2025 Suggesto — Painel Administrativo</p>
+
+    <script>
+        const frases = [
+          "Monitore, aprenda e evolua com o que dizem por aí.",
+          "Fique de olho no que seus clientes pensam de você.",
+          "Veja como seu público está reagindo em tempo real.",
+          "Fique por dentro e evolua com as sugestões.",
+          "Quem escuta o cliente, cresce com ele.",
+          "A opinião do cliente é o mapa do sucesso.",
+          "Toda crítica é um convite pra melhorar.",
+          "A mudança começa quando alguém decide ouvir."
+        ];
+      
+        let index = 0;
+        const fraseElemento = document.getElementById("fraseLogin");
+      
+        setInterval(trocaFrase, 3000);
+      
+        function trocaFrase() {
+          fraseElemento.style.opacity = 0; // começa a sumir
+      
+          setTimeout(() => {
+            index++;
+            if (index >= frases.length) {
+              index = 0;
+            }
+      
+            fraseElemento.textContent = frases[index];
+            fraseElemento.style.opacity = 1; // reaparece suavemente
+          }, 1000); // mesmo tempo da transição
+        }
+      </script>
+      
+
+</body>
+</html>

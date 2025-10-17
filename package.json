@@ -1,0 +1,24 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "Electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diogosantosu/Electron.git"
+  },
+  "author": "Diogo Damascena",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diogosantosu/Electron/issues"
+  },
+  "homepage": "https://github.com/diogosantosu/Electron#readme",
+  "devDependencies": {
+    "electron": "^38.2.2",
+    "electron-reload": "^2.0.0-alpha.1"
+  }
+}
