@@ -11,28 +11,47 @@ try {
 } catch (_) {}
 //para podermos atualizar as modificações feitas no código html automaticamente
 
+//Tela de login
 const createWindow = () => {
     nativeTheme.themeSource ='dark'
+ 
+
     //Importamos o recurso nativeTheme e definimos que a janela sempre estará no tema escuro
     const win = new BrowserWindow({
+
         width: 800,
-        height: 600,
+        height : 600,
         //tamanho da janela
         icon: './src/public/img/logoSuggesto.png',
         //icone da página
+
         autoHideMenuBar : true,
         //esconder o menu de funções da página
+
 
         //titleBarStyle: 'hidden'
         
   })
   //criamos uma função para gerar uma janela de 800 px de altura e 600 px de largura
-
+  win.maximize()
   win.loadFile('./src/views/index.html')
 } //Carregamos o arquivo index.html
 
+//Tela de inicio
+
+const inicioWindow = () => {
+   const about = new BrowserWindow ({
+      fullscreen : true,
+      icon: './src/public/img/logoSuggesto.png',
+      autoHideMenuBar : true,
+   })
+
+   about.loadFile('./src/views/inicio.html')
+}
+
 app.whenReady().then(() => {
   createWindow()
+  //inicioWindow()
 }) 
 //Executamos a função createWindow, criando a janela e incorporando o arquivo index.html
 //.then indica a execução de maneira assíncrona, primeiro cria a janela e depois executa
