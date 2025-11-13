@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggesto - Adicionar Estabelecimento</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../public/css/AddEstabelecimento.css">
+</head>
+<body>
+    <div class="container my-5">
+        <div class="row mb-3">
+            <div class="col-12">
+                <span class="icone-voltar" onclick="voltarParatelaInicial()">
+                    <i class="bi bi-arrow-left"></i> Voltar
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <h1 class="titulo-principal">Cadastrar novo estabelecimento</h1>
+                <p class="subtitulo">Insira as informações para cadastrar um novo local</p>
+            </div>
+        </div>
+        <div class="row g-5 mt-3">
+            <div class="col-md-6">
+                <form id="form-cadastro">
+                    <div class="mb-4">
+                        <label for="nome" class="form-label" >Nome do Estabelecimento</label>
+                        <input type="text" class="form-control" id="nome" placeholder="Ex: Pará Lanches">
+                        <label for="endereco" class="form-label" >Endereço do Estabelecimento</label>
+                        <input type="text" class="form-control" id="endereco" placeholder="Ex: Limeira, SP">
+                    </div>
+                    <div class="mb-4">
+                        <label for="categoria" class="form-label">Categoria</label>
+                        <select class="form-select" id="categoria">
+                            <option selected>Selecione uma categoria</option>
+                            <option value="Restaurante">Restaurante</option>
+                            <option value="Lanchonete">Lanchonete</option>
+                            <option value="Padaria">Padaria</option>
+                            <option value="Bar">Bar</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Foto de capa</label>
+                <div class="dropzone" id="dropzone">
+                    <input type="file" id="foto-input" accept="image/*" hidden>
+                    <i class="bi bi-cloud-upload"></i>
+                    <p>Arraste e solte ou clique para selecionar</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12 text-end">
+                <button type="button" class="btn  btn-cadastrar" onclick="cadastrarEstabelecimento()">Cadastrar</button>
+                <button type="button" class="btn btn-cancelar" onclick="voltarParatelaInicial()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+<script src="../public/js/scriptAddEstabelecimento.js"></script>
+</body>
+</html>

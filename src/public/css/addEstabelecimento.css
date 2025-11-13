@@ -1,0 +1,107 @@
+body {
+    background-color: #18181b;
+    color: #f4f4f5;
+    opacity: 1; /* Transição do fade ao entrar na página*/
+    transition: opacity 0.3s ease-out;
+}
+body.fade-out {
+    opacity: 0;
+}
+.titulo-principal {
+    color: white;
+    font-weight: 600;
+}
+.subtitulo {
+    color: #a1a1aa
+}
+
+/*=================Formulário=================*/
+
+.form-label {
+    color: #f4f4f5;
+    font-weight: 500;
+    
+}
+.form-control,
+.form-select {
+    background-color: #27272a;
+    border: 1px solid #3f3f46;
+    color: white;
+    padding: 12px;
+    margin-bottom:15px;
+}
+.form-control::placeholder {
+    color: #71717a;
+}
+.form-control:focus,
+.form-select:focus {
+    background-color: #27272a;
+    border-color: #a78bfa;
+    color: white;
+
+    /*Brilho roxo*/
+    box-shadow: 0 0 0 0.25rem rgba(167, 139, 250, 0.25);
+}
+
+/*================Área da foto=================*/
+
+.dropzone {
+    border: 2px dashed #52525b; /*dashed = borda tracejada*/
+    border-radius: 8px;
+    background-color: #27272a;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;     /* Empilha os itens verticalmente */
+    justify-content: center;    /* Centraliza verticalmente */
+    align-items: center;        /* Centraliza horizontalmente */
+
+    text-align: center;
+    color: #a1a1aa;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.dropzone i {
+    /*Ícone de nuvem*/
+    font-size: 3rem;
+    color: #a78bfa;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+    border-color: #a78bfa;
+    background-color: #3f3f46;
+}
+
+.btn-cancelar {
+    border: 1px solid #71717a;
+    color: white;
+    padding: 10px 24px;
+    font-weight: 500;
+}
+.btn-cancelar:hover {
+    background-color: #3f3f46;
+    border-color: #3f3f46;
+}
+.btn-cadastrar{
+    border: 1px solid #a78bfa;
+    color: white;
+    padding: 10px 24px;
+    font-weight: 500;
+    margin-left: 15px;
+}
+.btn-cadastrar:hover{
+    background-color: #8b5cf6;
+}
+
+.icone-voltar {
+    color: #a1a1aa;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3 ease;
+}
+.icone-voltar:hover {
+    color: #a78bfa;
+}

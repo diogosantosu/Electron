@@ -1,9 +1,10 @@
+<!--A Recepção do prédio. É a interface visível. Só pode interagir com os botões e formulários.-->
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electron tutorial</title>
+    <title>Suggesto</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -185,6 +186,16 @@
             transition: opacity 1s ease-in-out;
             opacity: 1;
         }
+
+        body {
+            /* Garante que o fundo não "pisque" branco durante o fade */
+            background-color: #18181b; 
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
+        body.fade-out {
+            opacity: 0;
+        }
     </style>
 </head>
 
@@ -193,7 +204,7 @@
         <div id="tituloContainer">
             <div id="titulologo">
                 <div id="titulo">Suggesto</div>
-                <img src="../public/img/balãoSuggesto.png" id="Logo">
+                <img src="../public/img/logoBalao.png" id="Logo">
             </div>
             <div id="fraseAdm">Administradores</div>
         </div>
@@ -249,6 +260,53 @@
         }
     </script>
 
+     <script>
+            document.addEventListener('DOMContentLoaded', ()=>{
+                
+                const emailInput = document.getElementById('email')
+                const senhaInput = document.getElementById('senha')
+                const entrarButton = document.getElementById('entrar')
+                const fraseLogin = document.getElementById('fraseLogin')
+
+                entrarButton.addEventListener('click', async () => {
+                    const email = emailInput.value
+                    const senha = senhaInput.value
+
+                    try {
+                        const resultado = await window.api.login(email,senha)
+
+                        if (resultado.sucess){
+                            console.log('[RECEPÇÃO]: Resposta: SUCESSO! A sala está mudando.');
+
+                            fraseLogin.innerText = 'conectando...'
+                            fraseLogin.style.color = '#c8e6c9'
+
+                            // --- A MÁGICA COMEÇA AQUI ---
+
+                            // 1. Adiciona a classe para iniciar o fade-out
+                            document.body.classList.add('fade-out');
+
+                            // 2. Espera a animação (300ms) terminar
+                            setTimeout(() => {
+                                // 3. Chama a MESMA função que a tela2 usa para voltar
+                                window.api.irParatelaUm(); 
+                            }, 300); // Mesmo tempo da transição do CSS
+                        }
+                        else {
+                            console.log('[RECEPÇÃO]: Resposta: FALHA.');
+                            
+                            fraseLogin.innerText = resultado.message
+                            fraseLogin.style.color = '#ffcdd2'
+                        }
+                    }
+                    catch(err) {
+                        console.error('[RECEPÇÃO]: O Guichê explodiu!', err);
+                        fraseLogin.innerText = 'Erro de comunicação. Tente de novo.';
+                         fraseLogin.style.color = '#ffcdd2';
+                    }
+                })
+            })
+        </script>
 
 </body>
 

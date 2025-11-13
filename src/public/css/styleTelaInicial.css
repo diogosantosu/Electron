@@ -1,0 +1,468 @@
+    body {
+        background-color: #18181b;
+    }
+
+    nav {
+        height: 7vh;
+        margin: 0;
+    }
+
+    nav.navbar {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        height: 7vh !important;
+    }
+
+    #navbar {
+        background-color: rgb(39, 39, 42);
+        height: 7vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: 1%;
+        position: fixed;
+        z-index: 999;
+
+        transition: all 0.4s ease;
+        /* animação suave */
+    }
+
+    .abrir {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .abrir:hover {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(52, 52, 55);
+        height: 70%;
+        aspect-ratio: 1 / 1;
+        border-radius: 1vh;
+        border: 0.1vh;
+        border-style: solid;
+        border-color: black;
+    }
+
+    .abrir:hover #iconeAbrir {
+        color: rgb(149, 100, 177);
+        font-size: 3vh;
+    }
+
+    #iconeAbrir {
+        color: white;
+        font-size: 3vh;
+    }
+
+    .numeroEstab {
+        color: #a78bfa;
+        margin-left: 10px;
+        background-color: rgba(167, 139, 250, 0.1);
+        padding: 10px 15px;
+        border-radius: 10px;
+    }
+
+    .sidebar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(9, 9, 12);
+        width: 16%;
+        height: 100vh;
+        border-right: 0.05vh solid rgb(72, 72, 75);
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        /*inicia no topo da tela */
+        left: -16vw;
+        /*posiciona a sidebar fora da tela (escondida) */
+        transition: left 0.4s ease;
+        /*animação suave quando a sidebar abrir/fechar */
+    }
+
+    .sidebar.ativa {
+        left: 0;
+        /* NOVO: move a sidebar para dentro da tela */
+    }
+
+    /*1º*/
+    .principal {
+        height: 12%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: aliceblue;*/
+        border-bottom: 0.05vh solid rgb(72, 72, 75);
+    }
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: brown;*/
+        height: 50%;
+        aspect-ratio: 1 / 1;
+
+    }
+
+    .logo img {
+        width: 100%;
+    }
+
+    .tituloSide {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        /*background-color: rgba(0, 255, 255, 0.575);*/
+        height: 100%;
+        margin-left: 2%;
+    }
+
+    .suggesto {
+        color: rgb(255, 255, 255);
+        font-size: 2vw;
+        font-weight: bold;
+        margin-top: 10%;
+        margin-bottom: -1%;
+    }
+
+    .adm {
+        color: rgb(109, 109, 112);
+        font-size: 1vw;
+        margin-top: 0;
+    }
+
+
+    /*2ª*/
+    .estabelecimentos {
+        height: 12%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: salmon;*/
+    }
+
+    .estabelecimentosTexto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45%;
+        width: 80%;
+        border-radius: 2vh;
+    }
+
+    .estabelecimentosTexto p {
+        color: whitesmoke;
+        font-size: 1.1vw;
+        margin: 0;
+    }
+
+    .estabelecimentosTexto:hover,
+    .estabelecimentosTexto.ativo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45%;
+        width: 80%;
+        background-color: rgba(69, 69, 72);
+        border-radius: 1.5vh;
+    }
+
+    .estabelecimentosTexto:hover p,
+    .estabelecimentosTexto.ativo p {
+        color: rgb(149, 100, 177);
+        font-size: 1.1vw;
+        margin: 0;
+    }
+
+    /*TRAÇO*/
+    .sublinhado {
+        border-bottom: 0.05vh solid rgb(72, 72, 75);
+        width: 100%;
+    }
+
+    /*3ª*/
+    .selecionado {
+        margin-top: 5px;
+        height: 64%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /*background-color: gold;*/
+        border-bottom: 0.05vh solid rgb(72, 72, 75);
+    }
+
+    .estabelecimentoSelecionado {
+        height: 14%;
+        /*background-color: pink;*/
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: -7.5%;
+    }
+
+    .estabelecimentoSelecionado p {
+        font-size: 0.8vw;
+        margin: 0;
+        color: rgb(102, 102, 105);
+    }
+
+
+
+    /*4ª*/
+    .perfil {
+        height: 12%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        /*background-color: magenta;*/
+    }
+
+    .iconeUser {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: darkgoldenrod;*/
+        width: 20%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .bi-person-circle {
+        color: blueviolet;
+        font-size: 3.5vh;
+    }
+
+
+    .informacoesPessoais {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        /*background-color: rgba(0, 255, 255, 0.575);*/
+        height: 100%;
+        width: 70%;
+        padding-left: 3%;
+    }
+
+    .nomeUser {
+        font-size: 0.9vw;
+        color: white;
+        margin-bottom: -1%;
+    }
+
+    .emailUser {
+        font-size: 0.72vw;
+        color: rgb(102, 102, 105);
+        margin-bottom: 0;
+    }
+
+
+    .tituloConteudo {
+        margin-top: 25px;
+        color: white;
+        font-size: 25px;
+        margin-left: 5px;
+    }
+
+    .subtituloConteudo {
+        margin-top: 10px;
+        color: gray;
+        font-size: 18px;
+        margin-left: 5px;
+    }
+
+    .card-dashboard {
+        flex: 1;
+        min-width: 60px;
+        height: 75px;
+        transition: all 0.3 ease;
+        background-color: #27272a;
+        color: white;
+        border-radius: 10px;
+        display: flex;
+    }
+
+
+
+    #cardContainer h5 {
+        font-size: 15px;
+        color: gray;
+        text-align: left;
+        padding-top: 15px;
+        padding-left: 10px;
+
+    }
+
+    #cardContainer p {
+        color: white;
+        text-align: left;
+        font-size: 18px;
+        padding-left: 10px;
+
+    }
+
+
+
+
+
+    .card {
+        min-height: 100px;
+        /* Ajuste conforme necessário */
+    }
+
+    #corpo {
+        /* Define o estado inicial (sidebar fechada) 
+      e garante que ele ocupe 100% da largura.
+    */
+        width: 100%;
+        margin-left: 0;
+
+        /* Isso impede que o topo do seu conteúdo 
+      fique escondido atrás da navbar, que é fixa e tem 7vh de altura.
+    */
+        padding-top: 7vh;
+
+        /* A MÁGICA: Isso diz ao navegador para animar 
+      as propriedades 'margin-left' e 'width' suavemente
+      durante 0.4 segundos, igual à navbar.
+    */
+        transition: margin-left 0.4s ease, width 0.4s ease;
+
+        padding: 1.5%;
+    }
+
+    .lugar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        /* mesmo tamanho do outro botão */
+        border-radius: 2vh;
+        /* mesma borda do outro botão */
+        margin: 0 auto;
+        padding: 10px 0;
+        /* um preenchimento para ficar melhor */
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* Define as cores do texto */
+    .lugar .nomeLocal {
+        color: whitesmoke;
+        font-size: 1.1vw;
+    }
+
+    .lugar .tipo {
+        color: rgb(102, 102, 105);
+        font-size: 0.8vw;
+    }
+
+
+    /* Efeito de HOVER para o bloco 'Mec Lanches' */
+    .lugar:hover {
+        background-color: rgba(69, 69, 72);
+        /* mesmo fundo do outro botão */
+        border-radius: 1.5vh;
+    }
+
+    .lugar:hover .nomeLocal {
+        color: rgb(233, 188, 241);
+        /* mesma cor de texto do outro botão */
+    }
+
+body {
+    /* Por padrão, a página é visível e tem uma animação de opacidade */
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+body.fade-out {
+    /* Classe que usaremos via JS para "apagar" a página */
+    opacity: 0;
+}
+
+/* ========================================
+   ESTILOS PARA A SEÇÃO "MEUS ESTABELECIMENTOS"
+   ======================================== */
+
+/* Card "Adicionar Novo" (do Figma) */
+.card-add-novo {
+    background-color: #3f3f46; /* Um cinza um pouco mais claro */
+    border: 2px dashed #52525b; /* Borda tracejada cinza (como no Figma) */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%; /* Para alinhar com os outros cards da linha */
+    min-height: 320px;
+    border-radius: 15px;
+}
+
+/* Efeito hover para o card "Adicionar Novo" */
+.card-add-novo:hover {
+    border-color: #a78bfa; /* Borda fica roxa */
+    background-color: #4a4a52; /* Fundo escurece um pouco */
+}
+
+/* Estilo para os cards de estabelecimento (Mec Lanches, etc.) */
+.card-estabelecimento {
+    background-color: #27272a; /* Cor padrão do card-dashboard */
+    border: 1px solid #3f3f46; /* Borda sutil para definir o card */
+    transition: all 0.3s ease;
+    height: 100%;
+    border-radius: 15px;
+    min-height: 320px;
+}
+
+.card-estabelecimento:hover {
+    border-color: #a78bfa; /* Borda fica roxa */
+    transform: translateY(-5px); /* Efeito de "levantar" o card */
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.1);
+}
+
+/* Estilo da Tag "Restaurante" */
+.tag-tipo {
+    background-color: rgba(167, 139, 250, 0.1);
+    color: #a78bfa;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Estilo do Texto "Ver detalhes ->" */
+.ver-detalhes {
+    color: #a78bfa;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.card-estabelecimento:hover .ver-detalhes {
+    letter-spacing: 0.5px; /* Efeito sutil no hover */
+}
+
+.imagem-card {
+    border-radius: 15px;
+}
+.icone-lixo {
+    color: #a1a1aa; /* Cor cinza */
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.icone-lixo:hover {
+    color: #ef4444; /* Fica vermelho ao passar o mouse */
+}

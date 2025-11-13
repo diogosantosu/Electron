@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggesto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="../public/css/styleTela2.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid" id="navbar">
+        <div class="abrir" id="btnMenu">
+            <i class="bi bi-list" id="iconeAbrir" onclick="abrirSidebar()"></i>
+        </div>
+       <div></div>
+       <span class="numeroEstab">1 Estabelecimento ativo </span>
+    </div>
+</nav>
+
+
+<!-- Sidebar -->
+ <div class="sidebar" id="sidebar">
+    <div class="principal">
+        <div class="logo">
+            <img src="../public/img/logoBalao.png" alt="">
+        </div>
+
+        <div class="tituloSide">
+            <p class="suggesto">Suggesto</p>
+            <p class="adm">Administradores</p>
+        </div>
+        
+    </div>
+
+    <div class="estabelecimentos">
+        <div class="estabelecimentosTexto" onclick="irParatelaUm()">
+            <p>Meus Estabelecimentos</p>
+        </div>
+    </div>
+
+    <div class="sublinhado"></div>
+
+    <div class="selecionado">
+        <div class="estabelecimentoSelecionado">
+            <p>ESTABELECIMENTO SELECIONADO</p>
+        </div>
+
+        <div class="lugar">
+            <p class="nomeLocal" id="sidebar-nome">Mec Lanches</p>
+            <p class="tipo" id="sidebar-categoria">Restaurante</p>
+        </div>
+    </div>
+
+    <div class="perfil">
+        <div class="iconeUser">
+            <i class="bi bi-person-circle"></i>
+        </div>
+
+        <div class="informacoesPessoais">
+            <p class="nomeUser">Gabriel</p>
+            <p class="emailUser">gabriel@gmail.com</p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- CORPO -->
+<div class="corpo" id="corpo">
+    
+    <div class="tituloCorpo">
+        <div class="wrapper-titulo">
+            <p class="tituloLugar" id="corpo-titulo-nome">A carregar...</p>
+            
+            <input type="text" class="input-editar-nome hidden" id="corpo-edit-nome">
+
+            <span class="icone-editar" id="btn-editar" onclick="toggleModoEdicao()">
+                <i class="bi bi-pencil-square"></i>
+            </span>
+
+            <button class="btn-salvar-nome hidden" id="btn-salvar" onclick="salvarNovoNome()">
+                Salvar
+            </button>
+        </div>
+        <p class="detalhes">Detalhes e análises do estabelecimento</p>
+    </div>
+
+    <div class="fotoLugar" id="corpo-foto-capa">
+        <div class="informacoesLugar">
+            <p><span id="corpo-endereco"><i class="bi bi-geo-alt"></i> Limeira, SP</span><span><i class="bi bi-star-fill"></i> 4.5/5</span><span><i class="bi bi-chat-left"></i> 4 Sugestões</span><span><i class="bi bi-graph-up-arrow"></i> 7% este mês</span><span class="tipoLugar">Lanchonete</span></p>
+        </div>
+    </div>
+
+    <div class="filtroSugestoes">
+        <p><span onclick="mostrarTela('melhoresSugestoes')">Melhores Sugestões</span> <span onclick="mostrarTela('porCategoria')">Por Categoria</span> <span onclick="mostrarTela('analise')">Análise</span></p>
+    </div>
+
+    <div class="sugestoesSelecionadas" id="sugestoesSelecionadas">
+
+        <!--=================================MELHORES SUGESTOES=================================-->
+        <div class="melhoresSugestoes" id="melhoresSugestoes">
+            <div class="infoSugestoes">
+            <div class="blocoInfo">
+                <div class="dadosSugestoes">
+                    <p>
+                        Total de Sugestões
+                        <br>
+                        <span class="numeroDados">4</span>
+                    </p>
+                </div>
+
+                <div class="iconDados">
+                    <div class="iconDadosFundo">
+                        <i class="bi bi-trophy"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blocoInfo">
+                <div class="dadosSugestoes">
+                    <p>
+                        Total de Curtidas
+                        <br>
+                        <span class="numeroDados">303</span>
+                    </p>
+                </div>
+
+                <div class="iconDados">
+                    <div class="iconDadosFundo">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blocoInfo">
+                <div class="dadosSugestoes">
+                    <p>
+                        Total de Comentários
+                        <br>
+                        <span class="numeroDados">50</span>
+                    </p>
+                </div>
+
+                <div class="iconDados">
+                    <div class="iconDadosFundo">
+                        <i class="bi bi-chat-dots"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blocoInfo">
+                <div class="dadosSugestoes">
+                    <p>
+                        Alta Prioridade
+                        <br>
+                        <span class="numeroDados">1</span>
+                    </p>
+                </div>
+
+                <div class="iconDados">
+                    <div class="iconDadosFundo">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <div class="textoFeed">
+                <h1>Mec Lanches   <span class="classFeed">Atendimento</span></h1>
+                <p>Os garçons demoram MUITO pra receber o pedido, demora mais pra ser atendido do que pra chegar a comida</p>
+
+                <div class="likesFeed">
+                    <p><span><i class="bi bi-hand-thumbs-up"></i> 94</span><span><i class="bi bi-chat-dots"></i> 32</span></p>
+                </div>
+            </div>
+
+            <div class="dadosFeed">
+                <h1 class="prioridadeAlta">Alta</h1>
+                
+                <p><i class="bi bi-stopwatch"></i> Há 1 dia</p>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <div class="textoFeed">
+                <h1>Mec Lanches   <span class="classFeed">Preço</span></h1>
+                <p>Os valores das bebidas poderiam ser mais baixos</p>
+
+                <div class="likesFeed">
+                    <p><span><i class="bi bi-hand-thumbs-up"></i> 101</span><span><i class="bi bi-chat-dots"></i> 4</span></p>
+                </div>
+            </div>
+
+            <div class="dadosFeed">
+                <h1 class="prioridadeMedia">Média</h1>
+                
+                <p><i class="bi bi-stopwatch"></i> Há 2 semanas</p>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <div class="textoFeed">
+                <h1>Mec Lanches   <span class="classFeed">Qualidade</span></h1>
+                <p>As vezes o prato chega frio</p>
+
+                <div class="likesFeed">
+                    <p><span><i class="bi bi-hand-thumbs-up"></i> 87</span><span><i class="bi bi-chat-dots"></i> 12</span></p>
+                </div>
+            </div>
+
+            <div class="dadosFeed">
+                <h1 class="prioridadeMedia">Média</h1>
+                
+                <p><i class="bi bi-stopwatch"></i> Há 1 semana</p>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <div class="textoFeed">
+                <h1>Mec Lanches   <span class="classFeed">Estrutura</span></h1>
+                <p>A pintura está meio antiga, o ambiente não é muito bonito com ela assim</p>
+
+                <div class="likesFeed">
+                    <p><span><i class="bi bi-hand-thumbs-up"></i> 21</span><span><i class="bi bi-chat-dots"></i> 2</span></p>
+                </div>
+            </div>
+
+            <div class="dadosFeed">
+                <h1 class="prioridadeBaixa">Baixa</h1>
+                
+                <p><i class="bi bi-stopwatch"></i> Há 3 dias</p>
+            </div>
+        </div>
+
+        </div>
+
+        <!--==================================POR CATEGORIA=============================================-->
+
+        <div class="porCategoria" id="porCategoria">
+            <div class="infoSugestoes">
+                <div class="blocoInfo">
+                    <div class="dadosCategoria">
+                        <p>
+                            Estrutura
+                            <br>
+                            <span class="numeroDadosCategoria">1</span>
+                        </p>
+                    </div>
+
+                    <div class="iconCategoria">
+                        <div class="iconCategoriaFundo">
+                            <i class="bi bi-buildings"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blocoInfo">
+                    <div class="dadosCategoria">
+                        <p>
+                            Qualidade
+                            <br>
+                            <span class="numeroDadosCategoria">1</span>
+                        </p>
+                    </div>
+
+                    <div class="iconCategoria">
+                        <div class="iconCategoriaFundo">
+                            <i class="bi bi-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blocoInfo">
+                    <div class="dadosCategoria">
+                        <p>
+                            Atendimento
+                            <br>
+                            <span class="numeroDadosCategoria">1</span>
+                        </p>
+                    </div>
+
+                    <div class="iconCategoria">
+                        <div class="iconCategoriaFundo">
+                            <i class="bi bi-people"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blocoInfo">
+                    <div class="dadosCategoria">
+                        <p>
+                            Preço
+                            <br>
+                            <span class="numeroDadosCategoria">1</span>
+                        </p>
+                    </div>
+
+                    <div class="iconCategoria">
+                        <div class="iconCategoriaFundo">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filtroCategoria">
+                <p>
+                    <span onclick="mostrarFeedCategoria('feedbackEstrutura')">Estrutura</span>
+                    <span onclick="mostrarFeedCategoria('feedbackQualidade')">Qualidade</span>
+                    <span onclick="mostrarFeedCategoria('feedbackAtendimento')">Atendimento</span>
+                    <span onclick="mostrarFeedCategoria('feedbackPreco')">Preço</span>
+                </p>
+            </div>
+
+            <div class="categoriaEscolhida">
+            <!--FEED ESTRUTURA-->
+                <div class="feedbackEstrutura" id="feedbackEstrutura">
+
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Estrutura</span></h1>
+                            <p>A pintura está meio antiga, o ambiente não é muito bonito com ela assim</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 21</span><span><i class="bi bi-chat-dots"></i> 2</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeBaixa">Baixa</h1>
+                            
+                            <p><i class="bi bi-stopwatch"></i> Há 3 dias</p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Estrutura</span></h1>
+                            <p>A pintura está meio antiga, o ambiente não é muito bonito com ela assim</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 21</span><span><i class="bi bi-chat-dots"></i> 2</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeBaixa">Baixa</h1>
+                            
+                            <p><i class="bi bi-stopwatch"></i> Há 3 dias</p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Estrutura</span></h1>
+                            <p>A pintura está meio antiga, o ambiente não é muito bonito com ela assim</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 21</span><span><i class="bi bi-chat-dots"></i> 2</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeBaixa">Baixa</h1>
+                            
+                            <p><i class="bi bi-stopwatch"></i> Há 3 dias</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            <!--FEED QUALIDADE-->
+                <div class="feedbackQualidade" id="feedbackQualidade">
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Qualidade</span></h1>
+                            <p>As vezes o prato chega frio</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 87</span><span><i class="bi bi-chat-dots"></i> 12</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeMedia">Média</h1>
+                        
+                            <p><i class="bi bi-stopwatch"></i> Há 1 semana</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            <!--FEED ATENDIMENTO-->
+                <div class="feedbackAtendimento" id="feedbackAtendimento">
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Atendimento</span></h1>
+                            <p>Os garçons demoram MUITO pra receber o pedido, demora mais pra ser atendido do que pra chegar a comida</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 94</span><span><i class="bi bi-chat-dots"></i> 32</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeAlta">Alta</h1>
+                            
+                            <p><i class="bi bi-stopwatch"></i> Há 1 dia</p>
+                        </div>
+                    </div>
+                </div>
+
+            <!--FEED PRECO-->
+                <div class="feedbackPreco" id="feedbackPreco">
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Preço</span></h1>
+                            <p>Os valores das bebidas poderiam ser mais baixos</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 101</span><span><i class="bi bi-chat-dots"></i> 4</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeMedia">Média</h1>
+                            
+                            <p><i class="bi bi-stopwatch"></i> Há 2 semanas</p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <div class="textoFeed">
+                            <h1>Mec Lanches   <span class="classFeed">Preço</span></h1>
+                            <p>Os valores das bebidas poderiam ser mais baixos</p>
+
+                            <div class="likesFeed">
+                                <p><span><i class="bi bi-hand-thumbs-up"></i> 101</span><span><i class="bi bi-chat-dots"></i> 4</span></p>
+                            </div>
+                        </div>
+
+                        <div class="dadosFeed">
+                            <h1 class="prioridadeMedia">Média</h1>
+                            
+                            <p><i class="bi bi-stopwatch"></i> Há 2 semanas</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="analise" id="analise">
+                <div class="estatisticasdeAnalise">
+                <p>Sem dados até o momento!</p>
+        </div>
+        </div>
+
+    </div>
+
+    
+
+
+</div>
+
+    <script src="../public/js/scriptTela2.js"></script>
+</body>
+</html>

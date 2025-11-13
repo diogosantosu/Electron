@@ -1,0 +1,884 @@
+        body{
+            background-color: rgb(24, 24, 27);
+        }
+
+        /*NAVBAR*/
+        nav{
+            height: 7vh;
+            margin: 0;
+        }
+
+        nav.navbar {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            margin: 0 !important;
+            height: 7vh !important;
+        }
+
+       #navbar{
+            background-color: rgb(39, 39, 42);
+            height: 7vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 1%;
+            position: fixed;
+            z-index: 999;
+
+            transition: all 0.4s ease; /* animação suave */
+        }
+
+        .abrir{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70%;
+            aspect-ratio: 1 / 1;
+        }
+
+        .abrir:hover{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(52, 52, 55);
+            height: 70%;
+            aspect-ratio: 1 / 1;
+            border-radius: 1vh;
+            border: 0.1vh;
+            border-style: solid;
+            border-color: black;
+        }
+
+        .abrir:hover #iconeAbrir{
+            color: rgb(149, 100, 177);
+            font-size: 3vh;
+        }
+
+        #iconeAbrir{
+            color: white;
+            font-size: 3vh;
+        }
+
+        .numeroEstab {
+        color: #a78bfa;
+        margin-left: 10px;
+        background-color: rgba(167, 139, 250, 0.1);
+        padding: 8px 15px;
+        border-radius: 10px;
+    }
+
+
+/* SIDE BAR*/
+        .sidebar{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: rgb(9, 9, 12);
+            width: 16%; 
+            height: 100vh;
+            border-right: 0.05vh solid rgb(72, 72, 75);
+            z-index: 1000;
+            position: fixed;
+            top: 0;                  /*inicia no topo da tela */
+            left: -16vw;              /*posiciona a sidebar fora da tela (escondida) */
+            transition: left 0.4s ease; /*animação suave quando a sidebar abrir/fechar */
+        }
+
+        .sidebar.ativa {
+            left: 0;  /* NOVO: move a sidebar para dentro da tela */
+        }
+
+ /*1º*/
+        .principal{
+            height: 12%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*background-color: aliceblue;*/
+            border-bottom: 0.05vh solid rgb(72, 72, 75);
+        }
+
+        .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*background-color: brown;*/
+            height: 50%;
+            aspect-ratio: 1 / 1;
+
+        }
+
+        .logo img{
+            width: 100%;
+        }
+
+        .tituloSide{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            /*background-color: rgba(0, 255, 255, 0.575);*/
+            height: 100%;
+            margin-left: 2%;
+        }
+
+        .suggesto{
+            color: rgb(255, 255, 255);
+            font-size: 2vw;
+            font-weight: bold;
+            margin-top: 10%;
+            margin-bottom: -1%;
+        }
+
+        .adm{
+            color: rgb(109, 109, 112);
+            font-size: 1vw;
+            margin-top: 0;
+        }
+
+
+        /*2ª*/
+         .estabelecimentos {
+        height: 12%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*background-color: salmon;*/
+    }
+
+    .estabelecimentosTexto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45%;
+        width: 80%;
+        border-radius: 2vh;
+    }
+
+    .estabelecimentosTexto p {
+        color: whitesmoke;
+        font-size: 1.1vw;
+        margin: 0;
+    }
+
+    .estabelecimentosTexto:hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 45%;
+        width: 80%;
+        background-color: rgba(69, 69, 72);
+        border-radius: 1.5vh;
+    }
+
+    .estabelecimentosTexto:hover p {
+        color: rgb(233, 188, 241);
+        font-size: 1.1vw;
+        margin: 0;
+        border-radius: 1.5vh;
+    }
+
+    /*TRAÇO*/
+        .sublinhado{
+            border-bottom: 0.05vh solid rgb(72, 72, 75);
+            width: 100%;
+        }
+
+         /*3ª*/
+        .selecionado{
+            height: 64%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /*background-color: gold;*/
+            border-bottom: 0.05vh solid rgb(72, 72, 75);
+        }
+
+        .estabelecimentoSelecionado{
+            height: 14%;
+            /*background-color: pink;*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: -7.5%;
+        }
+
+        .estabelecimentoSelecionado p{
+            font-size: 0.8vw;
+            margin: 0;
+            color: rgb(102, 102, 105);
+        }
+
+        .lugar{
+            height: 10.5%;
+            width: 85%;
+            background-color: rgb(39, 39, 42);
+            border-radius: 1.5vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 5%;
+        }
+
+        .nomeLocal{
+            font-size: 0.8vw;
+            font-weight: 400;
+            color: rgb(149, 100, 177);
+            margin: 0;
+        }
+
+        .tipo{
+            font-size: 0.75vw;
+            margin: 0;
+            color: rgba(122, 122, 125);
+        }
+
+
+         /*4ª*/
+        .perfil{
+            height: 12%;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            /*background-color: magenta;*/
+        }
+
+        .iconeUser{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /*background-color: darkgoldenrod;*/
+            width: 20%;
+            aspect-ratio: 1 / 1;
+        }
+
+        .bi-person-circle{
+            color: blueviolet;
+            font-size: 3.5vh;
+        }
+
+
+        .informacoesPessoais{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            /*background-color: rgba(0, 255, 255, 0.575);*/
+            height: 100%;
+            width: 70%;
+            padding-left: 3%;
+        }
+
+        .nomeUser{
+            font-size: 0.9vw;
+            color: white;
+            margin-bottom: -1%;
+        }
+
+        .emailUser{
+            font-size: 0.72vw;
+            color: rgb(102, 102, 105);
+            margin-bottom: 0;
+        }
+
+
+/*CORPO*/
+        .corpo{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            background-color: rgb(24, 24, 27);
+            width: 100%;
+            height: auto;
+            padding: 1.5%;
+            box-sizing: border-box;
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .tituloCorpo{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            justify-content: center;
+            width: 25%;
+        }
+
+        .tituloLugar{
+            font-size: 1.5vw;
+            font-weight: 500;
+            color: white;
+            margin-bottom: 0;
+        }
+
+        .detalhes{
+            font-size: 0.8vw;
+            color: rgb(102, 102, 105);
+            margin-top: 0;
+        }
+
+        /* FOTO ESTABELECIMENTO */
+        .fotoLugar{
+            margin-top: 2vh;
+            background-color: beige;
+            width: 100%;
+            height: 28vh;
+            border-radius: 1vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+
+            background-image: url(../img/mecLanches.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .informacoesLugar{
+            margin-left: 1.5%;
+            margin-bottom: 0.3%;
+            width: 40%;
+            height: 20%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .tipoLugar{
+            background-color:rgb(63, 63, 70);
+            font-size: 1.2vh;
+            border-radius: 0.7vh;
+            margin: 0;
+            padding: 0.1vw 0.3vw;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(72, 72, 75);
+            color: rgb(173, 144, 255);
+        }
+
+        .informacoesLugar p{
+            color: white;
+            font-size: 1.5vh;
+            display: flex;
+            gap: 1.5vw;
+            align-items: center;
+        }
+
+        .bi-geo-alt{
+            font-size: 1.5vh;
+        }
+
+        .bi-star-fill{
+            font-size: 1.5vh;
+        }
+
+        .bi-chat-left{
+            font-size: 1.5vh;
+        }
+
+        .bi-graph-up-arrow{
+            font-size: 1.5vh;
+        }
+
+        .filtroSugestoes{
+            background-color: rgb(63, 63, 70);
+            width: 100%;
+            height: 4vh;
+            margin-top: 3vh;
+            border-radius: 1.2vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filtroSugestoes p{
+            font-size: 1.6vh;
+            font-weight: 470;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 28em;    
+            margin: 0;
+        }
+
+        .filtroSugestoes span:hover{
+            cursor: default;
+        }
+
+
+         /*===================ANIMAÇÃO DE UMA TELA PRA OUTRA====================*/
+        
+        .sugestoesSelecionadas{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+         }
+
+        .melhoresSugestoes,
+        .porCategoria,
+        .analise{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 100%;
+            transition: left 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .mostrar {
+            left: 0 !important;
+        }
+
+        /*====================================================================*/
+
+
+        /*===================== MELHORES SUGESTÕES ========================*/
+        .infoSugestoes{
+            margin-top: 3vh;
+            width: 100%;
+            height: 13vh;
+            display: flex;
+            justify-content: space-between;
+            gap: 2%;
+        }
+
+
+        .blocoInfo {
+            background-color: rgb(39, 39, 42);
+            border-radius: 1.5vh;
+            width: 25%;
+            height: 13vh;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(72, 72, 75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dadosSugestoes{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 5%;
+        }
+    
+        .dadosSugestoes p{
+            color: rgb(102, 102, 105);
+            font-size: 1.8vh;
+            font-weight: 450;
+            margin: 0;
+        }
+        
+        .numeroDados{
+            color: white;
+            font-size: 2vh;
+            font-weight: 500;
+        }
+
+        .iconDados{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .iconDadosFundo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 6vh;
+            aspect-ratio: 1/1;
+            border-radius: 1.5vh;
+            background-color: rgb(52, 49, 63);
+            font-size: 5vh;
+        }
+        .bi-trophy{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        .bi-hand-thumbs-up{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        .bi-chat-dots{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+        .bi-exclamation-circle-fill{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        /* FEEDBACK */
+        .feedback{
+            background-color: rgb(39, 39, 42);
+            height: 18vh;
+            width: 100%;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(72, 72, 75);
+            display: flex;
+            border-radius: 1.5vh;
+            margin-top: 3vh;
+        }
+
+        .textoFeed{
+            width: 85%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 1.5vw;
+        }
+
+        .textoFeed h1{
+            color: white;
+            font-weight: 500;
+            font-size: 2vh;
+            margin-top: 2vh;
+            display: flex;
+            align-items: center;
+            gap: 1.5vh;
+        }
+        
+        .classFeed{
+            font-size: 1.3vh;
+            font-weight: 500;
+            color: white;
+            background-color: rgb(25, 25, 28);
+            border-radius: 0.7vh;
+            margin: 0;
+            padding: 0.2vw 0.5vw;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(72, 72, 75);
+        }
+
+        .textoFeed p{
+            margin-top: 0.9vh;
+            color: rgb(102, 102, 105);
+            font-size: 1.8vh;
+        }
+
+        .likesFeed{
+            margin-top: 1.5vw;
+            width: 40%;
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .likesFeed p{
+            color: white;
+            font-size: 1.2vh;
+            display: flex;
+            gap: 1.5vw;
+            align-items: center;
+        }
+
+        .likesFeed i{
+            font-size: 1.5vh;
+            color: white;
+        }
+
+        .dadosFeed{
+            width: 15%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+        }
+
+        .prioridadeMedia{
+            background-color: rgb(254, 249, 194);
+            color: rgb(161, 78, 0);
+            font-size: 1.5vh;
+            font-weight: 500;
+            border-radius: 0.7vh;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(255, 240, 129);
+            padding: 1% 2%;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2vh;
+            margin-right: 1.5vw;
+        }
+
+         .prioridadeBaixa{
+            background-color: rgb(219, 252, 231);
+            color: rgb(0, 130, 16);
+            font-size: 1.5vh;
+            font-weight: 500;
+            border-radius: 0.7vh;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(187, 250, 209);
+            padding: 1% 2%;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2vh;
+            margin-right: 1.5vw;
+        }
+
+        .prioridadeAlta{
+            background-color: rgb(255, 226, 226);
+            color: rgb(193, 0, 5);
+            font-size: 1.5vh;
+            font-weight: 500;
+            border-radius: 0.7vh;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(255, 197, 197);
+            padding: 1% 2%;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2vh;
+            margin-right: 1.5vw;
+        }
+
+        .dadosFeed p{
+            margin-top: 7.7vh;
+            color: rgb(102, 102, 105);
+            font-size: 1.5vh;
+            margin-right: 1.5vw;
+        }
+
+        .dadosFeed i{
+            color: rgb(102, 102, 105);
+            font-size: 1.5vh;
+        }
+
+
+        /*===================== POR CATEGORIA ========================*/
+
+        .dadosCategoria{
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            padding-left: 5%;
+        }
+    
+        .dadosCategoria p{
+            color: rgb(102, 102, 105);
+            font-size: 1.8vh;
+            font-weight: 450;
+            margin: 0;
+        }
+        
+        .numeroDadosCategoria{
+            color: white;
+            font-size: 2vh;
+            font-weight: 500;
+        }
+
+        .iconCategoria{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .iconCategoriaFundo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 6vh;
+            aspect-ratio: 1/1;
+            border-radius: 1.5vh;
+            background-color: rgb(52, 49, 63);
+            font-size: 5vh;
+        }
+        .bi-buildings{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        .bi-star{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        .bi-people{
+            color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        .bi-currency-dollar{
+             color: rgb(173, 144, 255);
+            font-size: 50%;
+            font-weight: 700;
+        }
+
+        .filtroCategoria{
+            background-color: rgb(63, 63, 70);
+            width: 100%;
+            height: 4vh;
+            margin-top: 3vh;
+            border-radius: 1.2vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .filtroCategoria p{
+            font-size: 1.6vh;
+            font-weight: 470;
+            width: auto;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18em;    
+            margin: 0;
+        }
+
+        .filtroCategoria span:hover{
+            cursor: default;
+        }
+
+        /*==============MUDAR CATEGORIAS===================*/
+       .categoriaEscolhida {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feedbackEstrutura,
+        .feedbackQualidade,
+        .feedbackAtendimento,
+        .feedbackPreco {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 100%;
+            transition: left 0.4s ease;
+        }
+
+        .selecionado {
+            left: 0 !important;
+        }
+
+        body {
+    /* Por padrão, a página é visível e tem uma animação de opacidade */
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+body.fade-out {
+    /* Classe que usaremos via JS para "apagar" a página */
+    opacity: 0;
+}   
+
+      .analise{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+         }
+
+         .estatisticasdeAnalise{
+            height: 20vh;
+            width: 100%;
+            background-color: rgb(39, 39, 42);
+            border-radius: 1.5vh;
+            width: 40%;
+            height: 28vh;
+            border: 0.01vh;
+            border-style: solid;
+            border-color: rgb(72, 72, 75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3vh;
+            font-size: 2.5vh;
+            font-weight: lighter;
+            color: white;
+        }
+
+        .hidden {
+    display: none !important;
+}
+
+/* O wrapper do título */
+.wrapper-titulo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre os itens */
+}
+.wrapper-titulo .tituloLugar {
+    margin-bottom: 0; /* Remove a margem do <p> */
+}
+
+/* Estilo do novo input de edição */
+.input-editar-nome {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: white;
+    background-color: #27272a;
+    border: 1px solid #a78bfa;
+    border-radius: 6px;
+    padding: 5px 10px;
+}
+
+/* Ícone do Lápis */
+.icone-editar {
+    font-size: 1.5rem;
+    color: #a1a1aa;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.icone-editar:hover {
+    color: #a78bfa;
+}
+
+/* Botão de Salvar */
+.btn-salvar-nome {
+    background-color: #a78bfa;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+.btn-salvar-nome:hover {
+    background-color: #8b5cf6;
+}
